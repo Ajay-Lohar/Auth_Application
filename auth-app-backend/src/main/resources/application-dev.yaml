@@ -1,2 +1,35 @@
 server:
   port: 8083
+
+#Database Connections
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+
+#    hikari:
+#      pool-name: HikariCP
+#      maximum-pool-size: 5
+#      connection-timeout: 10000
+#      idle-timeout: 600000
+#      max-lifetime: 1800000
+#      validation-timeout: 1800000
+#      leak-detection-threshold: 0
+#      initialization-fail-timeout: -1
+
+
+    # JPA and hibernate configurations
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+
+
+
